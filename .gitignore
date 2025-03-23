@@ -1,11 +1,11 @@
-# Node.js dependencies
+#Node.js dependencies
 /node_modules/
 
 # Lock file (if you prefer to regenerate it from package.json)
 package-lock.json
 
 # Build output directory
-/dist/
+
 
 # Obfuscated files (optional, depending on how you handle deployment)
 *.obf.js
