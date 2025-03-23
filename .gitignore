@@ -6,9 +6,7 @@ package-lock.json
 
 # Build output directory
 
-
 # Obfuscated files (optional, depending on how you handle deployment)
-*.obf.js
 
 # Debug logs and temp files
 npm-debug.log*
