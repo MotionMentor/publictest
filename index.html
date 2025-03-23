@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motion Mentor</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background-color: #f9f9fb;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #222;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        #instructions {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .canvas-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+            max-width: 100%;
+            overflow: hidden;
+        }
+        canvas {
+            border-radius: 12px;
+            border: 1px solid #ddd;
+            max-width: 100%;
+            height: auto;
+        }
+        .accuracy-overlay {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.75);
+            padding: 6px 12px;
+            border-radius: 6px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            font-size: 16px;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out, transform 0.2s;
+            max-width: 90%;
+        }
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            #container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .canvas-container {
+                width: 90%;
+                padding: 10px;
+            }
+            button {
+                top: 2px;
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Motion Mentor!</h1>
+    <p id="instructions">Get real-time feedback on your movements! Align yourself with the reference pose for the best score.</p>
+    <button id="captureBtn">Capture Reference Pose</button>
+    <div id="container">
+        <div class="canvas-container">
+            <h3>Live Feedback</h3>
+            <canvas id="outputCanvas" width="600" height="450"></canvas>
+        </div>
+        <div class="canvas-container">
+            <h3>Reference Pose</h3>
+            <canvas id="referenceCanvas" width="600" height="450"></canvas>
+        </div>
+    </div>
+    <div id="feedback"></div>
+    <button id="flipReferenceBtn">Flip Reference Left/Right</button>
+</body>
+</html>
